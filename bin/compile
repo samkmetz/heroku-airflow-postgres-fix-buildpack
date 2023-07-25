@@ -1,2 +1,2 @@
-export AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sed 's/postgres/postgresql' $DATABASE_URL 
-export AIRFLOW__CELERY__RESULT_BACKEND=db+ sed 's/postgres/postgresql' $DATABASE_URL 
+export AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=$(echo "$DATABASE_URL" | sed "s/postgres/postgresql/g")
+export AIRFLOW__CELERY__RESULT_BACKEND=$(db+"$DATABASE_URL" | sed "s/postgres/postgresql/g")
