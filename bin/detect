@@ -1,0 +1,2 @@
+echo "adding airflow db variables"
+exit 0
